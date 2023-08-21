@@ -1,9 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import { Color } from "./styles/GlobalStyles";
+import { StyleSheet, View } from "react-native";
 import Login from "./pages/Login";
-import { useFonts } from "expo-font";
-import AnimatedBackground from "./AnimatedBackground.js";
 export default function App() {
   return (
     <View style={styles.container}>

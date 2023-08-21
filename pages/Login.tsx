@@ -10,13 +10,11 @@ import {
   Text,
   Input,
   NativeBaseProvider,
-  Pressable,
-  Icon,
+  Divider,
+  View,
 } from "native-base";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import * as React from "react";
-
 import { Color } from "../styles/GlobalStyles";
 
 const Login = () => {
@@ -50,28 +48,14 @@ const Login = () => {
           <VStack space={3} mt="5">
             <FormControl>
               <FormControl.Label>Email</FormControl.Label>
-              <Input color={Color.white} />
+              <Input color={Color.white} placeholder="Email" />
             </FormControl>
             <FormControl>
               <FormControl.Label>Password</FormControl.Label>
               <Input
-                type={show ? "text" : "password"}
-                InputRightElement={
-                  <Pressable onPress={() => setShow(!show)}>
-                    <Icon
-                      as={
-                        <MaterialIcons
-                          name={show ? "visibility" : "visibility-off"}
-                        />
-                      }
-                      size={5}
-                      mr="2"
-                      color={Color.white}
-                    />
-                  </Pressable>
-                }
-                placeholder="Password"
+                type="password"
                 color={Color.white}
+                placeholder="Password"
               />
               <Link
                 _text={{
@@ -88,6 +72,22 @@ const Login = () => {
             <Button mt="2" colorScheme="indigo">
               Sign in
             </Button>
+
+            <View style={{ flexDirection: "row", alignItems: "center" }} mt="4">
+              <Divider style={{ flex: 1 }} />
+              <Text style={{ marginHorizontal: 16 }} color={Color.white}>
+                OR CONTINUE WITH
+              </Text>
+              <Divider style={{ flex: 1 }} />
+            </View>
+            <VStack justifyContent="center" space="2" mt="2">
+              <Button colorScheme="red" size="sm">
+                Sign in with Google
+              </Button>
+              <Button colorScheme="blue" size="sm">
+                Sign in with Apple
+              </Button>
+            </VStack>
             <HStack mt="6" justifyContent="center">
               <Text
                 fontSize="sm"
